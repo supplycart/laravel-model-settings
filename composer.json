@@ -1,5 +1,5 @@
 {
-  "name": "supplycart/laravel-model-settings",
+  "name": "supplycart/settings",
   "description": "Model settings for Laravel",
   "require": {
     "laravel/framework": "^6.0"
