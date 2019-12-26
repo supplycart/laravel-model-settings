@@ -2,6 +2,7 @@
   "name": "supplycart/settings",
   "description": "Model settings for Laravel",
   "require": {
+    "php": "^7.0",
     "laravel/framework": "^6.0"
   },
   "require-dev": {
