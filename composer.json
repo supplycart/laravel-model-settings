@@ -1,0 +1,27 @@
+{
+  "name": "supplycart/laravel-model-settings",
+  "description": "Model settings for Laravel",
+  "require": {
+    "laravel/framework": "^6.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Supplycart\\Settings\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Supplycart\\Settings\\Tests\\": "tests"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Azri Ismail",
+      "email": "azri@supplycart.my"
+    }
+  ]
+}
