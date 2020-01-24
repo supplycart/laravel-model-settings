@@ -25,7 +25,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Supplycart\\Settings\\ServiceProviders\\SettingsServiceProvider"
+        "Supplycart\\Settings\\Providers\\SettingsServiceProvider"
       ]
     }
   },
