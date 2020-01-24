@@ -2,11 +2,12 @@
 
 namespace Supplycart\Settings\Traits;
 
-use Supplycart\Settings\Setting;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Supplycart\Settings\Models\Setting;
 
 trait HasSettings
 {
-    public function settings()
+    public function settings(): MorphOne
     {
         return $this->morphOne(Setting::class, 'model');
     }
@@ -20,7 +21,7 @@ trait HasSettings
      * @param string|array $key
      * @param mixed $value
      *
-     * @return \Supplycart\Settings\Setting
+     * @return \Supplycart\Settings\Models\Setting
      */
     public function setSetting($key, $value = null)
     {

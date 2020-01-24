@@ -14,11 +14,11 @@ interface HasSettings
 {
     public function settings(): MorphOne;
 
-    public function getSetting($key, $default = null);
+    public function getSetting(string $key, $default = null);
 
-    public function setSetting($key, $value = null);
+    public function setSetting(string $key, $value = null);
 
-    public function getDefaultSettings(): array;
+    public static function getDefaultSettings(): array;
 
     public function getCacheKey(): string;
 }

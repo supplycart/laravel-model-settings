@@ -7,7 +7,7 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use Supplycart\Settings\Setting;
+use Supplycart\Settings\Models\Setting;
 
 class SettingSaved implements ShouldBroadcast
 {
@@ -21,7 +21,7 @@ class SettingSaved implements ShouldBroadcast
 
     /**
      * Create a new event instance.
-     * @param \Supplycart\Settings\Setting $setting
+     * @param \Supplycart\Settings\Models\Setting $setting
      */
     public function __construct(Setting $setting)
     {

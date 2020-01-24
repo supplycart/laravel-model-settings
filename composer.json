@@ -2,11 +2,12 @@
   "name": "supplycart/settings",
   "description": "Model settings for Laravel",
   "require": {
-    "php": "^7.0",
-    "laravel/framework": "^6.0"
+    "php": "^7.4",
+    "spatie/laravel-activitylog": "^3.9"
   },
   "require-dev": {
-    "orchestra/testbench": "^4.0"
+    "orchestra/testbench": "^4.5",
+    "orchestra/canvas": "^4.5"
   },
   "autoload": {
     "psr-4": {
@@ -16,6 +17,16 @@
   "autoload-dev": {
     "psr-4": {
       "Supplycart\\Settings\\Tests\\": "tests"
+    },
+    "classmap": [
+      "database/factories"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Supplycart\\Settings\\ServiceProviders\\SettingsServiceProvider"
+      ]
     }
   },
   "license": "MIT",
