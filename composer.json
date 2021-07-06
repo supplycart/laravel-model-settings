@@ -2,7 +2,7 @@
   "name": "supplycart/settings",
   "description": "Model settings for Laravel",
   "require": {
-    "php": "^7.4",
+    "php": "^7.4|^8.0",
     "spatie/laravel-activitylog": "^3.9"
   },
   "require-dev": {
