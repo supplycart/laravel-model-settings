@@ -82,6 +82,8 @@ class Setting extends Model
         $this->values = $values;
 
         $this->save();
+        
+        Cache::tags(static::$cacheTag)->forget($this->model->getCacheKey());
 
         return $this;
     }
