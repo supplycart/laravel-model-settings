@@ -1,14 +1,28 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Supplycart\Settings\Database\Factories;
 
-use Faker\Generator as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Supplycart\Settings\Tests\Stubs\Company;
 
-$factory->define(Company::class, function (Faker $faker) {
-    return [
-        'name' => $faker->company,
-        'email' => $faker->companyEmail,
-        'phone_no' => $faker->phoneNumber,
-    ];
-});
+class CompanyFactory extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Company::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'name' => $this->faker->company(),
+        ];
+    }
+}

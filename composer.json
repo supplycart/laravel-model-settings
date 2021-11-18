@@ -2,25 +2,23 @@
   "name": "supplycart/settings",
   "description": "Model settings for Laravel",
   "require": {
-    "php": "^7.4|^8.0",
-    "spatie/laravel-activitylog": "^3.9"
+    "php": "^8.0",
+    "laravel/framework": "^8.0"
   },
   "require-dev": {
-    "orchestra/testbench": "^4.5",
-    "orchestra/canvas": "^4.5"
+    "orchestra/testbench": "^6.23",
+    "orchestra/canvas": "^6.10"
   },
   "autoload": {
     "psr-4": {
-      "Supplycart\\Settings\\": "src"
+      "Supplycart\\Settings\\": "src",
+      "Supplycart\\Settings\\Database\\Factories\\": "database/factories"
     }
   },
   "autoload-dev": {
     "psr-4": {
       "Supplycart\\Settings\\Tests\\": "tests"
-    },
-    "classmap": [
-      "database/factories"
-    ]
+    }
   },
   "extra": {
     "laravel": {

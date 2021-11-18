@@ -4,14 +4,11 @@ namespace Supplycart\Settings\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
-use Spatie\Activitylog\Traits\LogsActivity;
 use Supplycart\Settings\Contracts\HasSettings;
 use Supplycart\Settings\Events\SettingSaved;
 
 class Setting extends Model
 {
-    use LogsActivity;
-
     protected $fillable = [
         'values',
     ];
@@ -25,14 +22,6 @@ class Setting extends Model
     ];
 
     protected static $cacheTag = 'settings';
-
-    protected static $logAttributes = ['*'];
-
-    protected static $logName = 'settings';
-
-    protected static $logOnlyDirty = true;
-
-    protected static $submitEmptyLogs = false;
 
     public function model()
     {
@@ -82,7 +71,7 @@ class Setting extends Model
         $this->values = $values;
 
         $this->save();
-        
+
         Cache::tags(static::$cacheTag)->forget($this->model->getCacheKey());
 
         return $this;

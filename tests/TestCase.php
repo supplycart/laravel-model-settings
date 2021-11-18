@@ -2,10 +2,10 @@
 
 namespace Supplycart\Settings\Tests;
 
+use CreateSettingsTable;
 use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as TestBench;
-use Spatie\Activitylog\ActivitylogServiceProvider;
-use Supplycart\Settings\Providers\SettingsServiceProvider;
+use Supplycart\Settings\SettingsServiceProvider;
 
 abstract class TestCase extends TestBench
 {
@@ -14,17 +14,12 @@ abstract class TestCase extends TestBench
         parent::setUp();
 
         $this->setUpDatabase();
-
-        $this->withFactories(__DIR__.'/../database/factories');
-
-        activity()->disableLogging();
     }
 
     protected function getPackageProviders($app)
     {
         return [
             SettingsServiceProvider::class,
-            ActivitylogServiceProvider::class
         ];
     }
 
@@ -47,5 +42,9 @@ abstract class TestCase extends TestBench
             $table->string('phone_no')->nullable();
             $table->timestamps();
         });
+
+        include_once __DIR__ . '/../database/migrations/2020_01_24_073645_create_settings_table.php.stub';
+
+        (new CreateSettingsTable())->up();
     }
 }

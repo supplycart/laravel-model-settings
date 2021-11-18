@@ -1,9 +1,8 @@
 <?php
 
-namespace Tests\Feature;
+namespace Supplycart\Settings\Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Supplycart\Settings\Tests\Stubs\Company;
 use Supplycart\Settings\Tests\TestCase;
 
@@ -14,7 +13,7 @@ class ModelSettingTest extends TestCase
     public function test_model_can_have_default_settings()
     {
         /** @var Company $company */
-        $company = factory(Company::class)->create();
+        $company = Company::factory()->create();
         $settings = $company->getSetting();
 
         $this->assertIsArray($settings);
@@ -33,7 +32,7 @@ class ModelSettingTest extends TestCase
     public function test_can_get_model_setting_by_key()
     {
         /** @var Company $company */
-        $company = factory(Company::class)->create();
+        $company = Company::factory()->create();
 
         $this->assertEquals('Asia/KualaLumpur', $company->getSetting('timezone'));
         $this->assertEquals('MYR', $company->getSetting('currency'));
@@ -43,7 +42,7 @@ class ModelSettingTest extends TestCase
     public function test_can_set_model_setting_by_key()
     {
         /** @var Company $company */
-        $company = factory(Company::class)->create();
+        $company = Company::factory()->create();
 
         $company->setSetting('currency', 'USD');
         $company->setSetting('currency_unit', 'USD');

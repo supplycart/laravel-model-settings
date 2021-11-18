@@ -2,6 +2,18 @@
 
 Allows eloquent models to have its own settings
 
+## Installation
+
+To install, run this on your Laravel installation:
+```shell
+composer require supplycart/settings
+```
+
+Then publish the migration file:
+```shell
+php artisan vendor:publish --tag=migrations --provider=Supplycart\Settings\Providers\SettingsServiceProvider
+```
+
 ## Usage
 
 To use, you just need to implement the `Supplycart\Settings\Contracts\HasSettings` contract and use `Supplycart\Settings\Traits\HasSettings` trait:

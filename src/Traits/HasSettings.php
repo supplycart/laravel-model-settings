@@ -9,12 +9,14 @@ trait HasSettings
 {
     public function settings(): MorphOne
     {
-        return $this->morphOne(Setting::class, 'model');
+        return $this->morphOne($this->getSettingModel(), 'model');
     }
 
     public function getSetting(string $key = null, $default = null)
     {
-        return Setting::for($this)->get($key, $default);
+        $model = $this->getSettingModel();
+
+        return $model::for($this)->get($key, $default);
     }
 
     /**
@@ -25,11 +27,18 @@ trait HasSettings
      */
     public function setSetting($key, $value = null)
     {
-        return Setting::for($this)->set($key, $value);
+        $model = $this->getSettingModel();
+
+        return $model::for($this)->set($key, $value);
     }
 
     public function getCacheKey(): string
     {
         return 'settings:' . get_class($this) . ':' . $this->getKey();
+    }
+
+    public function getSettingModel(): string
+    {
+        return config('settings.model', Setting::class);
     }
 }
