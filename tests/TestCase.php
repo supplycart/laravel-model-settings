@@ -5,7 +5,7 @@ namespace Supplycart\Settings\Tests;
 use CreateSettingsTable;
 use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as TestBench;
-use Supplycart\Settings\SettingsServiceProvider;
+use Supplycart\Settings\Providers\SettingsServiceProvider;
 
 abstract class TestCase extends TestBench
 {
