@@ -3,11 +3,7 @@
   "description": "Model settings for Laravel",
   "require": {
     "php": "^8.0",
-    "laravel/framework": "^8.0"
-  },
-  "require-dev": {
-    "orchestra/testbench": "^6.23",
-    "orchestra/canvas": "^6.10"
+    "laravel/framework": "^9.21"
   },
   "autoload": {
     "psr-4": {
@@ -33,5 +29,9 @@
       "name": "Azri Ismail",
       "email": "azri@supplycart.my"
     }
-  ]
+  ],
+  "require-dev": {
+    "orchestra/canvas": "^7.2",
+    "orchestra/testbench": "^7.6"
+  }
 }
