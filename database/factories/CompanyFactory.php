@@ -19,6 +19,7 @@ class CompanyFactory extends Factory
      *
      * @return array
      */
+    #[\Override]
     public function definition()
     {
         return [

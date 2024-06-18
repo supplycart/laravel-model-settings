@@ -17,10 +17,6 @@ class Setting extends Model
         'saved' => SettingSaved::class,
     ];
 
-    protected $casts = [
-        'values' => 'array',
-    ];
-
     protected static $cacheTag = 'settings';
 
     public function model()
@@ -77,8 +73,15 @@ class Setting extends Model
         return $this;
     }
 
+    #[\Override]
     public function attributesToArray()
     {
         return $this->values;
+    }
+    protected function casts(): array
+    {
+        return [
+            'values' => 'array',
+        ];
     }
 }

@@ -21,7 +21,6 @@ class SettingSaved implements ShouldBroadcast
 
     /**
      * Create a new event instance.
-     * @param \Supplycart\Settings\Models\Setting $setting
      */
     public function __construct(Setting $setting)
     {
@@ -33,6 +32,7 @@ class SettingSaved implements ShouldBroadcast
      *
      * @return \Illuminate\Broadcasting\Channel|array
      */
+    #[\Override]
     public function broadcastOn()
     {
         return new PrivateChannel("settings.{$this->setting->model_type}.{$this->setting->model_id}");

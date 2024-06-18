@@ -21,11 +21,10 @@ trait HasSettings
 
     /**
      * @param string|array $key
-     * @param mixed $value
      *
      * @return \Supplycart\Settings\Models\Setting
      */
-    public function setSetting($key, $value = null)
+    public function setSetting($key, mixed $value = null)
     {
         $model = $this->getSettingModel();
 
@@ -34,7 +33,7 @@ trait HasSettings
 
     public function getCacheKey(): string
     {
-        return 'settings:' . get_class($this) . ':' . $this->getKey();
+        return 'settings:' . $this::class . ':' . $this->getKey();
     }
 
     public function getSettingModel(): string
