@@ -9,6 +9,7 @@ use Supplycart\Settings\Providers\SettingsServiceProvider;
 
 abstract class TestCase extends TestBench
 {
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -16,6 +17,7 @@ abstract class TestCase extends TestBench
         $this->setUpDatabase();
     }
 
+    #[\Override]
     protected function getPackageProviders($app)
     {
         return [
@@ -23,6 +25,7 @@ abstract class TestCase extends TestBench
         ];
     }
 
+    #[\Override]
     protected function getEnvironmentSetUp($app)
     {
         $app['config']->set('database.default', 'sqlite');

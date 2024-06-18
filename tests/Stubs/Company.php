@@ -13,6 +13,7 @@ class Company extends Model implements SettingsContract
     use HasFactory;
     use HasSettings;
 
+    #[\Override]
     public static function getDefaultSettings(): array
     {
         return [
