@@ -30,7 +30,7 @@
     }
   ],
   "require-dev": {
-    "orchestra/canvas": "^8.0",
-    "orchestra/testbench": "^8.0"
+    "orchestra/canvas": "^9.0",
+    "orchestra/testbench": "^9.0"
   }
 }
